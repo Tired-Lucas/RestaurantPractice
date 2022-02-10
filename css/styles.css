@@ -1,15 +1,26 @@
+:root{
+--backgound_color: #A267AC;
+--yellow:#FFC600;
+}
+
 html,
 body{
   margin:0;
   padding:0;
+  background: var(--backgound_color);
 }
-.nav-bar{
+
+.nav-bar ul{
   display: flex;
+  justify-content: space-evenly;
 }
-li,
-a{
+.nav-bar li, a{
   list-style: none;
   text-decoration: none;
   color: black;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: cursive;
+  background: var(--yellow);
+  padding: 0.3em 1.5em;
 }
