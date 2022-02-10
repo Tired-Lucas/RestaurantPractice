@@ -9,10 +9,16 @@ body{
   padding:0;
   background: var(--backgound_color);
 }
-
+.nav-bar{
+ display: flex;
+ flex-direction: column;
+}
 .nav-bar ul{
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 220px));
+  grid-gap: 5px;
+  justify-content: center;
+  align-self: center;
 }
 .nav-bar li, a{
   list-style: none;
@@ -22,5 +28,5 @@ body{
   font-weight: bold;
   font-family: cursive;
   background: var(--yellow);
-  padding: 0.3em 1.5em;
+  text-align: center;
 }
