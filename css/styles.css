@@ -9,13 +9,18 @@ body{
   padding:0;
   background: var(--backgound_color);
 }
+@media (max-width: 850px){
+  .nav-bar ul{
+    
+  }
+}
 .nav-bar{
  display: flex;
  flex-direction: column;
 }
 .nav-bar ul{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 220px));
+  grid-template-columns: repeat(auto-fit, minmax(10vw, 15vw));
   grid-gap: 10px;
   justify-content: center;
   align-self: center;
