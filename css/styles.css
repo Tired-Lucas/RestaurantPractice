@@ -5,37 +5,115 @@
 
 html,
 body{
-  margin:20px 5px;
+  margin:20px 20px;
   padding:0;
   background: var(--backgound_color);
 }
-@media (max-width: 850px){
-  .nav-bar ul{
 
-  }
+
+.menu a, li{
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  font-family: cursive;
+  font-weight: bolder;
+  background: var(--yellow);
+  padding: 10px 20px;
+  text-align: center;
+  list-style: none;
+
 }
-.nav-bar{
- display: flex;
- align-items: center;
- justify-content: center;
-}
-.nav-bar ul{
+.menu{
   display: flex;
   align-items: center;
 }
-.nav-bar li{
-margin-left: 10px;
+.menu ul{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 10px;
+  width: 100%;
+  transition: 0.2s;
 }
-.nav-bar li, a{
-  list-style: none;
-  text-decoration: none;
-  color: #072227;
-  font-size: 1.4rem;
-  font-weight: bold;
-  font-family: helvetica,'Times New Roman', arial;
-  background: var(--yellow);
-  text-align: center;
-  padding:8px;
-  width: 180px;
 
+.hamburger{
+  position: relative;
+  height: 4px;
+  width:25px;
+  left:0;
+  background:var(--yellow);
+  cursor: pointer;
+  z-index: 1;
+  transition: 0.3s;
+}
+.hamburger::before,
+.hamburger::after{
+  content: "";
+  position:absolute;
+  background:var(--yellow);
+  height:4px;
+  width: 25px;
+  cursor: pointer;
+ transition: 0.3s;
+}
+.hamburger::before{
+  top: -5px;
+}
+.hamburger::after{
+  top:5px;
+}
+.checkbox{
+  position: absolute;
+  width:20px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 2;
+  opacity:0;
+}
+.checkbox,
+.hamburger{
+  display: none;
+}
+.menu input:checked ~ .hamburger{
+  background: transparent;
+}
+.menu input:checked ~ .hamburger::before{
+  top:0;
+  transform:rotate(-45deg);
+  width: 25px;
+}
+.menu input:checked ~ .hamburger::after{
+  top:0;
+  transform: rotate(45deg);
+  width: 25px;
+}
+@media screen and (max-width:920px){
+  .checkbox,
+  .hamburger
+  {
+    display: block;
+  }
+  .checkbox{
+    top:26px;
+  }
+  .menu{
+    flex-direction: column;
+    align-items:center;
+    height:100%;
+  }
+  .menu ul{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding:0;
+  left: -1000px;
+  position: fixed;
+  }
+  .menu li{
+    width: 100%;
+
+  }
+  .menu input:checked ~ ul{
+  left: 0;
+  }
 }
