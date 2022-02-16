@@ -34,6 +34,7 @@ body{
   grid-gap: 10px;
   width: 100%;
   transition: 0.2s;
+
 }
 .menu li{
   border-style: inset;
@@ -79,7 +80,7 @@ body{
 }
 .checkbox,
 .hamburger{
-  display: none;
+  /*display: none*/;
 }
 .menu input:checked ~ .hamburger{
   background: transparent;
@@ -124,4 +125,30 @@ body{
   .menu input:checked ~ ul{
   left: 0;
   }
+}
+/*Parte após o menu*/
+.first{
+  display:grid;
+  grid-template-columns: 4fr 2fr;
+  grid-template-rows: 100% 100%;
+  grid-template-areas: "image price1""image price2";
+  grid-gap: 20px;
+
+}
+.figure,
+.price1,
+.price2{
+  background: var(--yellow);
+}
+.figure{
+  grid-area: image;
+}
+.figure img{
+  object-fit: cover;
+}
+.price1{
+  grid-area:price1;
+}
+.price2{
+  grid-area: price2;
 }
