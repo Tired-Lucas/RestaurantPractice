@@ -14,8 +14,8 @@ body{
 .menu a, li{
   text-decoration: none;
   color: black;
-  font-size: 1.3rem;
-  font-family: cursive;
+  font-size: 1.1rem;
+  font-family: sans-serif;
   font-weight: bolder;
   background: var(--yellow);
   text-align: center;
@@ -98,6 +98,59 @@ body{
   transform: rotate(45deg);
   width: 25px;
 }
+
+/*Parte após o menu*/
+.first{
+  display:grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 50% 50%;
+  grid-template-areas: "image price1""image price2";
+  grid-gap: 15px;
+  padding-top:10px;
+}
+.figure,
+.price1,
+.price2{
+  background: var(--yellow);
+}
+.figure{
+  grid-area: image;
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+}
+.price1{
+  grid-area:price1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    height: 100%;
+}
+.price2{
+  grid-area: price2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.price1 h2,
+.price2 h2{
+  line-height: 0;
+  font-size: 3rem;
+  font-weight: 100;
+  color: black;
+}
+.price1 p,
+.price2 p
+{
+  line-height: 0;
+  margin-top:0.8px;
+  font-size: 1.1rem;
+  font-weight: bolder;
+
+}
 @media screen and (max-width:920px){
   .checkbox,
   .hamburger
@@ -138,55 +191,9 @@ body{
   .menu input:checked ~ ul{
   top: 40px;
   }
+  .first{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "image image" "price1 price2";
 }
-/*Parte após o menu*/
-.first{
-  display:grid;
-  grid-template-columns: 4fr 2fr;
-  grid-template-rows: 100% 100%;
-  grid-template-areas: "image price1""image price2";
-  grid-gap: 20px;
-
-}
-.figure,
-.price1,
-.price2{
-  background: var(--yellow);
-  height: 100%;
-}
-.figure{
-  grid-area: image;
-}
-.figure img{
-  object-fit: cover;
-}
-.price1{
-  grid-area:price1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.price2{
-  grid-area: price2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.price1 h2,
-.price2 h2{
-  line-height: 0;
-  font-size: 3rem;
-  font-weight: 100;
-  color: black;
-}
-.price1 p,
-.price2 p
-{
-  line-height: 0;
-  margin-top:1px;
-  font-size: 1.1rem;
-  font-weight: bolder;
-
 }
