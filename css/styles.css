@@ -1,6 +1,9 @@
 :root {
   --backgound_color: #B8405E;
   --yellow: #ffc600;
+  --grid_gap: 20px;
+  --gray_color:rgba(1, 1, 1, 0.84);
+  --gray-secondary: rgba(1, 1, 1, 0.65);
 }
 
 html,
@@ -111,10 +114,10 @@ body {
 /*Parte após o menu*/
 .first {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 50% 50%;
   grid-template-areas: "image price1""image price2";
-  grid-gap: 15px;
+  grid-gap: var(--grid_gap);
   padding-top: 10px;
 }
 
@@ -164,6 +167,43 @@ body {
   font-size: 1.1rem;
   font-weight: bolder;
 }
+/*Segunda Parte */
+.second{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: var(--grid_gap);
+  padding-top: 40px;
+}
+.second img{
+  padding-top: 20px;
+  width:50px;
+  line-height: 0;
+  margin: 0;
+  color:black;
+
+}
+.second h3{
+  color: var(--gray_color);
+  line-height: 0;
+  font-size: 1.3rem;
+}
+.second p{
+  color:var(--gray_color);
+  margin: 0 20px 20px 20px;
+  text-align: center;
+}
+.beer,
+.wine,
+.pizza,
+.music{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 /*Media query*/
 @media screen and (max-width:920px) {
