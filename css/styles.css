@@ -203,7 +203,18 @@ body {
   align-items: center;
 }
 
-
+/*Terceira parte*/
+.tertiary{
+ margin-top: var(--grid_gap);
+  display: grid;
+  grid-template-rows: 70vh;
+  background-color: white;
+}
+.tertiary img{
+width: 600px;
+height:100%;
+object-fit: cover;
+}
 
 /*Media query*/
 @media screen and (max-width:920px) {
